@@ -4,17 +4,21 @@
 
 <p align="center">
   <a href="https://fiornex.com">
-    <img src="https://img.shields.io/badge/website-fiornex.com-2D2D2D?style=for-the-badge" alt="website" />
+    <img src="https://img.shields.io/badge/website-fiornex.com-2D2D2D?style=for-the-badge" alt="website" height="30" align="middle" />
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://play.google.com/store/apps/details?id=com.fiornex.app&hl=en">
+    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="45" align="middle" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-in%20production-brightgreen" alt="status" />
-  <img src="https://img.shields.io/badge/backend-FastAPI-009688" alt="fastapi" />
-  <img src="https://img.shields.io/badge/frontend-Next.js-yellowgreen" alt="nextjs" />
-  <img src="https://img.shields.io/badge/mobile-Expo%20%2F%20React%20Native-4630EB" alt="expo" />
-  <img src="https://img.shields.io/badge/db-PostgreSQL-4169E1" alt="postgres" />
-  <img src="https://img.shields.io/badge/EA-MQL4%20%2F%20MQL5-orange" alt="mql" />
+  <img src="https://img.shields.io/badge/status-in%20production-brightgreen" alt="status" height="20" />
+  <img src="https://img.shields.io/badge/backend-FastAPI-009688" alt="fastapi" height="20" />
+  <img src="https://img.shields.io/badge/frontend-Next.js-yellowgreen" alt="nextjs" height="20" />
+  <img src="https://img.shields.io/badge/mobile-Expo%20%2F%20React%20Native-4630EB" alt="expo" height="20" />
+  <img src="https://img.shields.io/badge/db-PostgreSQL-4169E1" alt="postgres" height="20" />
+  <img src="https://img.shields.io/badge/EA-MQL4%20%2F%20MQL5-orange" alt="mql" height="20" />
 </p>
 
 > **Note:** This is a public architecture overview, not the source repository. The codebase is private; this document exists to explain how the system is built and why. No proprietary logic, credentials or business data are included.
@@ -29,12 +33,13 @@ Free tier gets the core analytics suite on a single connected account, forever, 
 
 ## Screenshots
 
+<h3 align="center">Dashboard page:</h3>
 <p align="center">
-  Dashboard page:<br/>
   <img src="./assets/dashboard-page.png" alt="Dashboard walkthrough" width="75%" />
 </p>
+
+<h3 align="center">Analytics pages carousel:</h3>
 <p align="center">
-  Analytic pages carousell:<br/>
   <img src="./assets/analytics-page.gif" alt="Analytics walkthrough" width="75%" />
 </p>
 
@@ -46,7 +51,7 @@ Free tier gets the core analytics suite on a single connected account, forever, 
 flowchart LR
     subgraph clients["Clients"]
         WEB["Web app<br/>Next.js"]
-        MOBILE["Mobile app<br/>Expo / React Native<br/>(closed testing)"]
+        MOBILE["Mobile app<br/>Expo / React Native<br/>"]
     end
  
     subgraph trader["Trader's Terminal"]
@@ -152,7 +157,7 @@ flowchart TB
 - A component system built on top of shadcn/ui primitives, layered with domain-specific chart, table, and card components
 - MDX-based in-app documentation (connect account / configure portfolio / install EA guides, per-language)
 - Public, unauthenticated routes for shared portfolio pages, separate from the authenticated app shell
-**Mobile** - Expo / React Native, currently in closed testing pre-launch. Shares the same conceptual API/service/hook layering as web (`api/services`, `hooks/`, typed DTOs) so backend contract changes propagate predictably to both clients.
+**Mobile** - Expo / React Native, live on Google Play (Android). Shares the same conceptual API/service/hook layering as web (`api/services`, `hooks/`, typed DTOs) so backend contract changes propagate predictably to both clients.
  
 Both clients consume the same versioned FastAPI backend - no client-specific backend endpoints.
 
